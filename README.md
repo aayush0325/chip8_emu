@@ -33,7 +33,7 @@ A 0 B F           Z X C V
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/aayush0325/chip8.git
+    git clone https://github.com/aayush0325/chip8_emu.git
     cd chip8
     ```
 
