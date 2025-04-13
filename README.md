@@ -16,12 +16,6 @@ This project is a CHIP-8 emulator written in Rust. CHIP-8 is a simple, interpret
 
 http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#0.0
 
-## Features
-
-- Fully implemented CHIP-8 instruction set.
-- Key mapping for intuitive input.
-- Written in safe and performant Rust.
-
 ## Key Mappings
 
 The following key mappings are used to emulate the CHIP-8 keypad:
