@@ -56,3 +56,9 @@ A 0 B F           Z X C V
     ```bash
     cargo run --release ../c8games/PONG
     ```
+
+## To run the emulator in your browser
+
+```bash
+cd web && python3 -m http.server
+```
