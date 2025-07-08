@@ -24,9 +24,36 @@
                 background-color: #3e4451; /* Slightly lighter dark background for canvas */
                 image-rendering: crisp-edges;
                 image-rendering: pixelated;
-                width: 640px; /* Scale up for better visibility */
-                height: 320px;
+                width: 960px; /* Scale up for better visibility */
+                height: 480px;
                 margin-top: 20px;
+            }
+            .key-mappings {
+                margin-top: 30px;
+                text-align: center;
+            }
+            .key-mappings h2 {
+                color: #61afef;
+                margin-bottom: 10px;
+            }
+            .key-mappings pre {
+                background-color: #3e4451;
+                border: 1px solid #c678dd;
+                padding: 15px;
+                border-radius: 8px;
+                font-size: 1.2em; /* Make text larger */
+                display: inline-block; /* Shrink background to content */
+                text-align: left;
+            }
+            .source-code-link {
+                color: #61afef;
+                text-decoration: none;
+                margin-top: 10px;
+                margin-bottom: 20px; /* Increased distance */
+                font-size: 1.1em;
+            }
+            .source-code-link:hover {
+                text-decoration: underline;
             }
             label {
                 margin-right: 10px;
@@ -70,11 +97,23 @@
         </style>
     </head>
     <body>
-        <h1>My Chip-8 Emulator</h1>
+        <h1>My Chip-8 Emulator written in Rust 🦀</h1>
+        <a href="https://github.com/aayush0325/chip8_emu" target="_blank" class="source-code-link">View Source Code on GitHub</a>
         <label for="fileinput">Upload a Chip-8 game: </label>
         <input type="file" id="fileinput" autocomplete="off"/>
         <br/>
         <canvas id="canvas">If you see this message, then your browser doesn't support HTML5</canvas>
+        <div class="key-mappings">
+            <h2>Key Mappings</h2>
+            <pre>
+CHIP-8 Keypad:    Emulator Keypad:
+
+1 2 3 C           1 2 3 4
+4 5 6 D    =>     Q W E R
+7 8 9 E           A S D F
+A 0 B F           Z X C V
+            </pre>
+        </div>
     </body>
     <script type="module" src="index.js"></script>
 </html>
