@@ -87,7 +87,7 @@ async function run() {
         }
 
         try {
-            const response = await fetch(`c8games/${romName}`)
+            const response = await fetch(`/c8games/${romName}`)
             console.log("Fetch response:", response)
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`)
