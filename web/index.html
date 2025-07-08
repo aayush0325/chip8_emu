@@ -3,102 +3,17 @@
     <head>
         <title>Chip-8 Emulator</title>
         <meta charset="utf-8">
-        <style>
-            body {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-                margin: 0;
-                background-color: #282c34;
-                color: #abb2bf;
-                font-family: 'Courier New', Courier, monospace;
-            }
-            h1 {
-                color: #61afef;
-                margin-bottom: 20px;
-            }
-            canvas {
-                border: 2px solid #c678dd;
-                background-color: #3e4451;
-                image-rendering: crisp-edges;
-                image-rendering: pixelated;
-                width: 960px;
-                height: 480px;
-                margin-top: 20px;
-            }
-            .key-mappings {
-                margin-top: 30px;
-                text-align: center;
-            }
-            .key-mappings h2 {
-                color: #61afef;
-                margin-bottom: 10px;
-            }
-            .key-mappings pre {
-                background-color: #3e4451;
-                border: 1px solid #c678dd;
-                padding: 15px;
-                border-radius: 8px;
-                font-size: 1.2em;
-                display: inline-block;
-                text-align: left;
-            }
-            .source-code-link {
-                color: #61afef;
-                text-decoration: none;
-                margin-top: 10px;
-                margin-bottom: 20px;
-                font-size: 1.1em;
-            }
-            .source-code-link:hover {
-                text-decoration: underline;
-            }
-            label {
-                margin-right: 10px;
-                font-size: 1.1em;
-            }
-            input[type="file"] {
-                background-color: #5c6370;
-                color: #abb2bf;
-                border: 1px solid #c678dd;
-                padding: 8px;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-            input[type="file"]::-webkit-file-upload-button {
-                visibility: hidden;
-            }
-            input[type="file"]::before {
-                content: 'Select Game';
-                display: inline-block;
-                background: #61afef;
-                color: #282c34;
-                border: 1px solid #61afef;
-                border-radius: 3px;
-                padding: 5px 8px;
-                outline: none;
-                white-space: nowrap;
-                -webkit-user-select: none;
-                cursor: pointer;
-                font-weight: 700;
-                font-size: 10pt;
-            }
-            input[type="file"]:hover::before {
-                background: #528bff;
-            }
-            input[type="file"]:active::before {
-                background: #467ee6;
-            }
-            div {
-                margin-top: 20px;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h1>My Chip-8 Emulator written in Rust 🦀</h1>
-        <a href="https://github.com/aayush0325/chip8_emu" target="_blank" class="source-code-link">View Source Code on GitHub</a>
+        <p><b>Development Process:</b> Core module in Rust, desktop with SDL2, web with WebAssembly.</p>
+        <p><b>Specs:</b> 4KB RAM, 16 8-bit registers, 16-bit I register, 2 8-bit timers, 16-bit PC, 8-bit SP, 16-value stack.</p>
+        <div class="links-container">
+            <a href="https://github.com/aayush0325/chip8_emu" target="_blank" class="source-code-link red-link">View Source Code on GitHub</a>
+            <a href="https://github.com/aayush0325" target="_blank" class="source-code-link green-link">My GitHub Profile</a>
+            <a href="https://www.linkedin.com/in/aayush-khanna-633384290/" target="_blank" class="source-code-link blue-link">My LinkedIn Profile</a>
+        </div>
         <label for="fileinput">Upload a Chip-8 game: </label>
         <input type="file" id="fileinput" autocomplete="off"/>
         <div class="rom-selector">

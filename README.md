@@ -1,6 +1,14 @@
 # CHIP-8 Emulator
 
-This project is a CHIP-8 emulator written in Rust. CHIP-8 is a simple, interpreted programming language used in the 1970s for creating games on 8-bit microcomputers. This emulator allows you to run CHIP-8 programs and games on modern systems.
+This project is a high-performance CHIP-8 emulator meticulously crafted in Rust, bringing the nostalgic 8-bit microcomputer experience to modern platforms. Beyond a mere interpreter, this emulator showcases a robust, modular architecture designed for optimal performance and cross-platform compatibility.
+
+## Development Process: A Deep Dive
+
+At its heart, the emulator features a highly optimized **core module** encapsulating all CHIP-8 CPU instructions, memory management, and peripheral interactions. This foundational Rust crate ensures precise emulation of the original hardware's intricacies.
+
+For a native desktop experience, we leveraged **SDL2** to provide a low-latency, high-fidelity graphical and input interface. This integration allows for seamless execution of classic CHIP-8 ROMs directly on your desktop, delivering a fluid and responsive gameplay experience.
+
+Pushing the boundaries of retro emulation, this project also extends its reach to the web. By compiling the core Rust module to **WebAssembly (Wasm)**, we've enabled the emulator to run directly within modern web browsers. This innovative approach allows for instant, plugin-free access to CHIP-8 games, demonstrating the power of Wasm for high-performance, platform-agnostic applications.
 
 ## Specs
 
