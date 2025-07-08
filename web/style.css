@@ -188,6 +188,10 @@ canvas {
         padding: 8px 12px;
     }
 
+    label {
+        font-size: 0.9em;
+    }
+
     input[type="file"],
     select {
         font-size: 0.75em;
