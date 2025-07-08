@@ -11,20 +11,20 @@
                 justify-content: center;
                 min-height: 100vh;
                 margin: 0;
-                background-color: #282c34; /* Dark background */
-                color: #abb2bf; /* Light text */
-                font-family: 'Courier New', Courier, monospace; /* Retro font */
+                background-color: #282c34;
+                color: #abb2bf;
+                font-family: 'Courier New', Courier, monospace;
             }
             h1 {
-                color: #61afef; /* Blue heading */
+                color: #61afef;
                 margin-bottom: 20px;
             }
             canvas {
-                border: 2px solid #c678dd; /* Purple border */
-                background-color: #3e4451; /* Slightly lighter dark background for canvas */
+                border: 2px solid #c678dd;
+                background-color: #3e4451;
                 image-rendering: crisp-edges;
                 image-rendering: pixelated;
-                width: 960px; /* Scale up for better visibility */
+                width: 960px;
                 height: 480px;
                 margin-top: 20px;
             }
@@ -41,15 +41,15 @@
                 border: 1px solid #c678dd;
                 padding: 15px;
                 border-radius: 8px;
-                font-size: 1.2em; /* Make text larger */
-                display: inline-block; /* Shrink background to content */
+                font-size: 1.2em;
+                display: inline-block;
                 text-align: left;
             }
             .source-code-link {
                 color: #61afef;
                 text-decoration: none;
                 margin-top: 10px;
-                margin-bottom: 20px; /* Increased distance */
+                margin-bottom: 20px;
                 font-size: 1.1em;
             }
             .source-code-link:hover {
@@ -101,6 +101,35 @@
         <a href="https://github.com/aayush0325/chip8_emu" target="_blank" class="source-code-link">View Source Code on GitHub</a>
         <label for="fileinput">Upload a Chip-8 game: </label>
         <input type="file" id="fileinput" autocomplete="off"/>
+        <div class="rom-selector">
+            <label for="rom-select">Or select a pre-loaded ROM:</label>
+            <select id="rom-select">
+                <option value="">--Please choose an option--</option>
+                <option value="15PUZZLE">15PUZZLE</option>
+                <option value="BLINKY">BLINKY</option>
+                <option value="BLITZ">BLITZ</option>
+                <option value="BRIX">BRIX</option>
+                <option value="CONNECT4">CONNECT4</option>
+                <option value="GUESS">GUESS</option>
+                <option value="HIDDEN">HIDDEN</option>
+                <option value="INVADERS">INVADERS</option>
+                <option value="KALEID">KALEID</option>
+                <option value="MAZE">MAZE</option>
+                <option value="MERLIN">MERLIN</option>
+                <option value="MISSILE">MISSILE</option>
+                <option value="PONG">PONG</option>
+                <option value="PONG2">PONG2</option>
+                <option value="PUZZLE">PUZZLE</option>
+                <option value="SYZYGY">SYZYGY</option>
+                <option value="TANK">TANK</option>
+                <option value="TETRIS">TETRIS</option>
+                <option value="TICTAC">TICTAC</option>
+                <option value="UFO">UFO</option>
+                <option value="VBRIX">VBRIX</option>
+                <option value="VERS">VERS</option>
+                <option value="WIPEOFF">WIPEOFF</option>
+            </select>
+        </div>
         <br/>
         <canvas id="canvas">If you see this message, then your browser doesn't support HTML5</canvas>
         <div class="key-mappings">

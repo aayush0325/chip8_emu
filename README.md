@@ -63,7 +63,6 @@ A 0 B F           Z X C V
 cd web && cargo build && wasm-pack build --target web
 ```
 
-
 ## To run the emulator in your browser
 
 ```bash

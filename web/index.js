@@ -51,6 +51,35 @@ async function run() {
         }
         fr.readAsArrayBuffer(file)
     }, false)
+
+    const romSelect = document.getElementById("rom-select")
+    romSelect.addEventListener("change", async function(evt) {
+        if (anim_frame != 0) {
+            window.cancelAnimationFrame(anim_frame)
+        }
+
+        const romName = evt.target.value
+        console.log("Selected ROM:", romName)
+        if (!romName) {
+            return // No ROM selected
+        }
+
+        try {
+            const response = await fetch(`c8games/${romName}`)
+            console.log("Fetch response:", response)
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`)
+            }
+            const rom = new Uint8Array(await response.arrayBuffer())
+            chip8.reset()
+            chip8.load_game(rom)
+            mainloop(chip8)
+            romSelect.blur() // Remove focus from the dropdown
+        } catch (error) {
+            console.error("Error loading ROM:", error)
+            alert("Failed to load ROM: " + romName)
+        }
+    })
 }
 
 function mainloop(chip8) {
