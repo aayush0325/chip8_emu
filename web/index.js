@@ -28,6 +28,28 @@ async function run() {
         chip8.keypress(evt, false)
     })
 
+    const keypad = document.querySelector(".keypad")
+    if (keypad) {
+        const buttons = keypad.querySelectorAll("button");
+        buttons.forEach(button => {
+            button.addEventListener("pointerdown", function(evt) {
+                evt.preventDefault(); // Prevent default behavior
+                const key = this.dataset.key;
+                if (key) {
+                    chip8.virtual_keypress(key, true);
+                }
+            });
+
+            button.addEventListener("pointerup", function(evt) {
+                evt.preventDefault(); // Prevent default behavior
+                const key = this.dataset.key;
+                if (key) {
+                    chip8.virtual_keypress(key, false);
+                }
+            });
+        });
+    }
+
     input.addEventListener("change", function(evt) {
         // Stop previous game from rendering, if one exists
         if (anim_frame != 0) {

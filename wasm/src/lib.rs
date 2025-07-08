@@ -55,6 +55,13 @@ impl EmuWasm {
     }
 
     #[wasm_bindgen]
+    pub fn virtual_keypress(&mut self, key_str: String, pressed: bool) {
+        if let Some(k) = key2btn(&key_str) {
+            self.chip8.keypress(k, pressed);
+        }
+    }
+
+    #[wasm_bindgen]
     pub fn load_game(&mut self, data: Uint8Array) {
         self.chip8.load(&data.to_vec());
     }

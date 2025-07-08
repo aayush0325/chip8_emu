@@ -7,6 +7,7 @@ export const emuwasm_reset: (a: number) => void;
 export const emuwasm_tick: (a: number) => void;
 export const emuwasm_tick_timers: (a: number) => void;
 export const emuwasm_keypress: (a: number, b: any, c: number) => void;
+export const emuwasm_virtual_keypress: (a: number, b: number, c: number, d: number) => void;
 export const emuwasm_load_game: (a: number, b: any) => void;
 export const emuwasm_draw_screen: (a: number, b: number) => void;
 export const __wbindgen_exn_store: (a: number) => void;

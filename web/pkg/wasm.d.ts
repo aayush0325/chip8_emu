@@ -7,6 +7,7 @@ export class EmuWasm {
   tick(): void;
   tick_timers(): void;
   keypress(evt: KeyboardEvent, pressed: boolean): void;
+  virtual_keypress(key_str: string, pressed: boolean): void;
   load_game(data: Uint8Array): void;
   draw_screen(scale: number): void;
 }
@@ -21,6 +22,7 @@ export interface InitOutput {
   readonly emuwasm_tick: (a: number) => void;
   readonly emuwasm_tick_timers: (a: number) => void;
   readonly emuwasm_keypress: (a: number, b: any, c: number) => void;
+  readonly emuwasm_virtual_keypress: (a: number, b: number, c: number, d: number) => void;
   readonly emuwasm_load_game: (a: number, b: any) => void;
   readonly emuwasm_draw_screen: (a: number, b: number) => void;
   readonly __wbindgen_exn_store: (a: number) => void;

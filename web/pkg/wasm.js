@@ -221,6 +221,15 @@ export class EmuWasm {
         wasm.emuwasm_keypress(this.__wbg_ptr, evt, pressed);
     }
     /**
+     * @param {string} key_str
+     * @param {boolean} pressed
+     */
+    virtual_keypress(key_str, pressed) {
+        const ptr0 = passStringToWasm0(key_str, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.emuwasm_virtual_keypress(this.__wbg_ptr, ptr0, len0, pressed);
+    }
+    /**
      * @param {Uint8Array} data
      */
     load_game(data) {
