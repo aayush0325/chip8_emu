@@ -57,6 +57,13 @@ A 0 B F           Z X C V
     cargo run --release ../c8games/PONG
     ```
 
+## To compile the WebAssembly
+
+```bash
+cd web && cargo build && wasm-pack build --target web
+```
+
+
 ## To run the emulator in your browser
 
 ```bash
