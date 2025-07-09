@@ -3,7 +3,7 @@ import init, * as wasm from "./pkg/wasm.js"
 const WIDTH = 64
 const HEIGHT = 32
 const SCALE = 15
-const TICKS_PER_FRAME = 10
+let TICKS_PER_FRAME = 10
 let anim_frame = 0
 
 const canvas = document.getElementById("canvas")
@@ -101,6 +101,13 @@ async function run() {
             console.error("Error loading ROM:", error)
             alert("Failed to load ROM: " + romName)
         }
+    })
+
+    const speedSelect = document.getElementById("speed-select")
+    speedSelect.addEventListener("change", function(evt) {
+        const speedMultiplier = parseFloat(evt.target.value)
+        TICKS_PER_FRAME = Math.round(10  * speedMultiplier)
+        console.log("New TICKS_PER_FRAME:", TICKS_PER_FRAME)
     })
 }
 
