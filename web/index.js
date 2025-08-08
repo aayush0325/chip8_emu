@@ -108,6 +108,28 @@ async function run() {
         const speedMultiplier = parseFloat(evt.target.value)
         TICKS_PER_FRAME = Math.round(10  * speedMultiplier)
         console.log("New TICKS_PER_FRAME:", TICKS_PER_FRAME)
+        // Remove focus from the speed selector immediately
+        speedSelect.blur()
+    })
+    
+    // Prevent key events from changing the speed selector after it loses focus
+    speedSelect.addEventListener("blur", function(evt) {
+        // Add a flag to prevent re-focusing
+        speedSelect.setAttribute("data-blurred", "true")
+    })
+    
+    speedSelect.addEventListener("focus", function(evt) {
+        // Remove the flag when user intentionally focuses
+        speedSelect.removeAttribute("data-blurred")
+    })
+    
+    // Prevent number keys from changing the speed selector when it should be blurred
+    speedSelect.addEventListener("keydown", function(evt) {
+        if (speedSelect.getAttribute("data-blurred") === "true") {
+            evt.preventDefault()
+            evt.stopPropagation()
+            speedSelect.blur()
+        }
     })
 }
 
